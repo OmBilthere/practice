@@ -1,4 +1,3 @@
-
 let currentsong = new Audio();
 let songs = [
   "Dil Diyan Gallan from Tiger Zinda Hai.mp3",
@@ -53,10 +52,11 @@ function populateSongList() {
       </li>`;
   }
   Array.from(document.querySelectorAll(".songlist li")).forEach((e) => {
-    e.addEventListener("click", () => {
-      playmusic(e.querySelector(".info").firstElementChild.innerText.trim());
-    });
-  });
+  e.addEventListener("click", () => {
+  const songName = e.querySelector(".info div").textContent.trim();
+  playmusic(songName);
+});
+
 }
 
 function main() {
